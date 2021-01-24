@@ -3,9 +3,9 @@
     --font-color: #333;
     --bg-color: #fff;
 
-    --link-color:#1d60a3;
-    --link-state-color:#a31d1d;
-    --link-state-border-color: rgba(163, 29, 29, .5);
+    --link-color:#dc3545;
+    --link-state-color:#dc3545;
+    --link-state-border-color: #dc3545;
 
     --thead-bg-color: lightgrey;
     --table-border-color: lightgrey;
