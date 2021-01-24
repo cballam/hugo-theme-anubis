@@ -4,9 +4,14 @@
 {{ if .Site.Menus.main }}
     <nav>
         {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-        <a class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
-        {{ end }}
+        {{ with .Site.Menus.main }}
+        {{ $navbar_len := len . }}
+        {{ range $i, $navbar_item := . }}
+        <a id="headLink" class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+            {{ if ne (add $i 1) $navbar_len }}
+                <span>/</span>{{ end }}
+            {{ end }}
+            {{ end }}
     </nav>
 {{ else }}
     <nav></nav>
